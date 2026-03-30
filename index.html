@@ -4,67 +4,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Engagement Anniversary</title>
-  <!-- Fireworks library -->
   <script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/fireworks.js"></script>
   <style>
     body {
       margin: 0;
       padding: 0;
       height: 100vh;
+      background-color: #ff0000; /* Red background */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: #ff0000; /* Red background */
-      color: #fff;
       font-family: sans-serif;
       overflow: hidden;
       text-align: center;
+      color: #fff;
     }
-    h1 {
+
+    #message {
       font-size: 2em;
+      margin: 20px;
+      max-width: 90%;
       z-index: 10;
       position: relative;
+      transition: opacity 0.5s ease;
     }
-    button {
-      margin: 10px;
-      padding: 10px 20px;
-      font-size: 1em;
+
+    #giftBox {
+      width: 120px;
+      height: 120px;
+      background: url('https://i.imgur.com/OH6F0P8.png') no-repeat center center;
+      background-size: contain;
       cursor: pointer;
-      border: none;
-      border-radius: 5px;
-      background-color: #fff;
-      color: #ff0000;
-      font-weight: bold;
-      transition: transform 0.2s;
+      margin: 20px;
+      z-index: 10;
+      animation: bounce 1s infinite alternate;
     }
-    button:hover {
-      transform: scale(1.1);
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-15px); }
     }
   </style>
 </head>
 <body>
-  <h1>Happy Engagement Anniversary Fazi ❤️ Mubashara!</h1>
-  <div>
-    <button onclick="sendWhatsApp()">Send WhatsApp Wishes</button>
-    <button onclick="surprise()">Open Surprise 🎁</button>
+
+  <!-- Initial Message -->
+  <div id="message">
+    Happy Engagement Anniversary ❤️ Mubashara! Wishing you endless love and happiness
   </div>
 
+  <!-- Gift Box -->
+  <div id="giftBox" title="Click me for your surprise!"></div>
+
   <script>
-    // WhatsApp button
-    function sendWhatsApp() {
-      const message = "Happy Engagement Anniversary Fazi ❤️ Mubashara! Wishing you endless love and happiness.";
-      const url = "https://wa.me/?text=" + encodeURIComponent(message);
-      window.open(url, '_blank');
-    }
+    let fireworks;
 
-    // Surprise button
-    function surprise() {
-      alert("🎉 Surprise! Happy Engagement Anniversary Fazi ❤️ Mubashara! 🎉");
-
-      // Trigger fireworks again
+    function startFireworks() {
       const container = document.body;
-      const fireworks = new Fireworks(container, {
+      fireworks = new Fireworks(container, {
         rocketsPoint: 50,
         trace: 3,
         explosion: 5,
@@ -76,20 +74,38 @@
       fireworks.start();
     }
 
-    // Fireworks on page load
-    window.onload = function() {
-      const container = document.body;
-      const fireworks = new Fireworks(container, {
-        rocketsPoint: 50,
-        trace: 3,
-        explosion: 5,
-        intensity: 30,
-        gravity: 2.0,
-        flickering: true,
-        boundaries: { x: 0, y: 0, width: container.clientWidth, height: container.clientHeight },
-      });
-      fireworks.start();
-    };
+    function giftBoxClicked() {
+      // Change message
+      const message = document.getElementById("message");
+      message.textContent = "❤️ Mubashara
+
+💖 Happy Engagement Anniversary 💖
+
+Fazi ❤️ Mubashara
+30 March 2024
+
+My Dearest Love,
+
+From the very moment you entered my life, everything became brighter, warmer, and more beautiful.
+You are not just my fiancé—you are my heart, my joy, my safe place, my forever.
+
+Every single day with you feels like a dream I never want to end.
+On this special day, I want to remind you just how deeply and endlessly I love you.
+
+✨ I promise to never leave your side ✨
+
+No matter what life brings, I will always be here, standing with you, loving you, and cherishing every moment with you.
+
+Happy Engagement Anniversary, my love 💍❤️
+Forever and always yours,
+Fazi 💫";
+
+      // Start fireworks
+      startFireworks();
+    }
+
+    document.getElementById("giftBox").addEventListener("click", giftBoxClicked);
   </script>
+
 </body>
-</html>    
+</html>
