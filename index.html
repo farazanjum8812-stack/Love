@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fazi ❤️ Mubashara</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  text-align: center;
+  color: white;
+}
+.container {
+  margin-top: 15%;
+}
+h1 {
+  font-size: 40px;
+}
+p {
+  font-size: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+.heart {
+  font-size: 50px;
+  animation: beat 1s infinite;
+}
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  color: #ff6f91;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.hidden {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="heart">❤️</div>
+  <h1>Happy Engagement Anniversary</h1>
+  <h2>Fazi ❤️ Mubashara</h2>
+  <p>30 March 2024</p>
+
+  <button onclick="showMessage()">Click to open your surprise 💌</button>
+
+  <p id="message" class="hidden">
+    My Love,<br><br>
+    From the moment you came into my life, everything changed beautifully.<br>
+    You are my peace, my happiness, my forever.<br><br>
+    Every day with you feels like a dream I never want to wake up from.<br><br>
+    ✨ I will never leave you ✨<br><br>
+    No matter what happens, I will always stand by your side.<br><br>
+    Happy Engagement Anniversary 💍❤️<br>
+    Forever yours,<br>
+    Fazi 💫
+  </p>
+</div>
+
+<script>
+function showMessage() {
+  document.getElementById("message").style.display = "block";
+}
+</script>
+
+</body>
+</html>
