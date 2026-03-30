@@ -25,25 +25,24 @@
       font-size: 2em;
       margin: 20px;
       max-width: 90%;
-      z-index: 10;
-      position: relative;
       transition: opacity 0.5s ease;
     }
 
-    #giftBox {
-      width: 120px;
-      height: 120px;
-      background: url('https://i.imgur.com/OH6F0P8.png') no-repeat center center;
-      background-size: contain;
+    #surpriseButton {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      background-color: #fff;
+      color: #ff0000;
       cursor: pointer;
-      margin: 20px;
-      z-index: 10;
-      animation: bounce 1s infinite alternate;
+      margin-top: 30px;
+      transition: transform 0.2s;
     }
 
-    @keyframes bounce {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-15px); }
+    #surpriseButton:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -54,8 +53,8 @@
     Happy Engagement Anniversary ❤️ Mubashara! Wishing you endless love and happiness
   </div>
 
-  <!-- Gift Box -->
-  <div id="giftBox" title="Click me for your surprise!"></div>
+  <!-- Open Surprise Button -->
+  <button id="surpriseButton">Open Surprise 🎁</button>
 
   <script>
     let fireworks;
@@ -74,37 +73,18 @@
       fireworks.start();
     }
 
-    function giftBoxClicked() {
+    function surpriseAction() {
       // Change message
       const message = document.getElementById("message");
-      message.textContent = "❤️ Mubashara
-
-💖 Happy Engagement Anniversary 💖
-
-Fazi ❤️ Mubashara
-30 March 2024
-
-My Dearest Love,
-
-From the very moment you entered my life, everything became brighter, warmer, and more beautiful.
-You are not just my fiancé—you are my heart, my joy, my safe place, my forever.
-
-Every single day with you feels like a dream I never want to end.
-On this special day, I want to remind you just how deeply and endlessly I love you.
-
-✨ I promise to never leave your side ✨
-
-No matter what life brings, I will always be here, standing with you, loving you, and cherishing every moment with you.
-
-Happy Engagement Anniversary, my love 💍❤️
-Forever and always yours,
-Fazi 💫";
+      message.textContent = 
+        "Happy Engagement Anniversary Fazi ❤️ Mubashara! Wishing you endless love and happiness";
 
       // Start fireworks
       startFireworks();
     }
 
-    document.getElementById("giftBox").addEventListener("click", giftBoxClicked);
+    // Button click event
+    document.getElementById("surpriseButton").addEventListener("click", surpriseAction);
   </script>
 
 </body>
