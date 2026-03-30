@@ -56,6 +56,7 @@ button {
   <p>30 March 2024</p>
 
   <button onclick="showMessage()">Click to open your surprise 💌</button>
+  <button onclick="sendWhatsApp()">Send Wishes on WhatsApp</button>
 
   <p id="message" class="hidden">
     My Love,<br><br>
@@ -73,6 +74,12 @@ button {
 <script>
 function showMessage() {
   document.getElementById("message").style.display = "block";
+}
+
+function sendWhatsApp() {
+  let message = "Happy Engagement Anniversary Fazi ❤️ Mubashara! Wishing you endless love and happiness.";
+  let url = "https://wa.me/?text=" + encodeURIComponent(message);
+  window.open(url, '_blank');
 }
 </script>
 
