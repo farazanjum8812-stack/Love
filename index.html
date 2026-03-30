@@ -72,8 +72,13 @@ button {
 </div>
 
 <script>
-// Fireworks effect after page loads
-window.onload = function() {
+<button onclick="surprise()">Open Surprise 🎁</button>
+
+<script>
+function surprise() {
+  alert("🎉 Surprise! Happy Engagement Anniversary Fazi ❤️ Mubashara! 🎉");
+  
+  // Optional: Trigger fireworks again
   const container = document.body;
   const fireworks = new Fireworks(container, {
     rocketsPoint: 50,
@@ -85,7 +90,7 @@ window.onload = function() {
     boundaries: { x: 0, y: 0, width: container.clientWidth, height: container.clientHeight },
   });
   fireworks.start();
-};
+}
 </script>
 
 </body>
