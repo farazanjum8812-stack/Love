@@ -45,6 +45,7 @@ button {
   display: none;
 }
 </style>
+  <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2/dist/fireworks.js"></script>
 </head>
 
 <body>
@@ -81,6 +82,18 @@ function sendWhatsApp() {
   let url = "https://wa.me/?text=" + encodeURIComponent(message);
   window.open(url, '_blank');
 }
+// Fireworks effect
+const container = document.body;
+const fireworks = new Fireworks(container, {
+  rocketsPoint: 50,
+  trace: 3,
+  explosion: 5,
+  intensity: 30,
+  gravity: 2.0,
+  flickering: true,
+  boundaries: { x: 0, y: 0, width: container.clientWidth, height: container.clientHeight },
+});
+fireworks.start();
 </script>
 
 </body>
