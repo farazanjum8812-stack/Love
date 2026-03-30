@@ -6,63 +6,74 @@
   <title>Happy Engagement Anniversary</title>
   <script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/fireworks.js"></script>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      height: 100vh;
-      background-color: #ff0000; /* Red background */
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-family: sans-serif;
-      overflow: hidden;
-      text-align: center;
-      color: #fff;
+      height: 100%;
+      width: 100%;
+      overflow: hidden; /* No scroll */
     }
 
-    #message {
-      font-size: 2em;
-      margin: 20px;
-      max-width: 90%;
-      transition: opacity 0.5s ease;
+    body {
+      background-color: #ff0000;
+      font-family: sans-serif;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 5vw;
+      box-sizing: border-box;
+    }
+
+    .message {
+      font-size: 5vw; /* responsive font size */
+      line-height: 1.4;
+      margin: 1vh 0;
+      word-wrap: break-word;
     }
 
     #secondMessage {
-      font-size: 1.5em;
-      margin: 20px;
-      max-width: 90%;
+      font-size: 4.5vw;
       opacity: 0;
       transition: opacity 1s ease;
     }
 
     #surpriseButton {
-      padding: 15px 30px;
-      font-size: 1.2em;
+      padding: 3vh 5vw;
+      font-size: 4vw;
       font-weight: bold;
       border: none;
       border-radius: 10px;
       background-color: #fff;
       color: #ff0000;
       cursor: pointer;
-      margin-top: 30px;
+      margin-top: 3vh;
       transition: transform 0.2s;
     }
 
     #surpriseButton:hover {
       transform: scale(1.1);
     }
+
+    /* Extra adjustment for very small screens */
+    @media (max-height: 600px) {
+      .message { font-size: 6vw; }
+      #secondMessage { font-size: 5.5vw; }
+      #surpriseButton { font-size: 5vw; padding: 2.5vh 4vw; }
+    }
   </style>
 </head>
 <body>
 
   <!-- Initial Message -->
-  <div id="message">
+  <div id="message" class="message">
     Happy Engagement Anniversary ❤️ Mubashara! Wishing you endless love and happiness
   </div>
 
-  <!-- Second Message (hidden initially) -->
-  <div id="secondMessage">
+  <!-- Second Message -->
+  <div id="secondMessage" class="message">
     ❤️ Mubashara
 
 💖 Happy Engagement Anniversary 💖
@@ -108,18 +119,12 @@ Fazi 💫
     }
 
     function surpriseAction() {
-      // Show second message
       const secondMessage = document.getElementById("secondMessage");
       secondMessage.style.opacity = 1;
-
-      // Start fireworks
       startFireworks();
-      
-      // Optional: hide button after click
       document.getElementById("surpriseButton").style.display = 'none';
     }
 
-    // Button click event
     document.getElementById("surpriseButton").addEventListener("click", surpriseAction);
   </script>
 
