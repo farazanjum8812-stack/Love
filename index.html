@@ -1,132 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Engagement Anniversary</title>
-  <script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/fireworks.js"></script>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      overflow: hidden; /* No scroll */
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Engagement Anniversary</title>
+<script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/fireworks.js"></script>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
 
-    body {
-      background-color: #ff0000;
-      font-family: sans-serif;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      flex-direction: column;
-      padding: 5vw;
-      box-sizing: border-box;
-    }
+  body {
+    background-color: #ff0000;
+    font-family: sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 
-    .message {
-      font-size: 5vw; /* responsive font size */
-      line-height: 1.4;
-      margin: 1vh 0;
-      word-wrap: break-word;
-    }
+  .message {
+    margin: 0.5em 0;
+    line-height: 1.4;
+    max-width: 90%;
+    /* responsive font size using clamp: min 16px, preferred 5vw, max 36px */
+    font-size: clamp(16px, 5vw, 36px);
+  }
 
-    #secondMessage {
-      font-size: 4.5vw;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
+  #secondMessage {
+    opacity: 0;
+    transition: opacity 1s ease;
+    font-size: clamp(14px, 4.5vw, 32px);
+  }
 
-    #surpriseButton {
-      padding: 3vh 5vw;
-      font-size: 4vw;
-      font-weight: bold;
-      border: none;
-      border-radius: 10px;
-      background-color: #fff;
-      color: #ff0000;
-      cursor: pointer;
-      margin-top: 3vh;
-      transition: transform 0.2s;
-    }
+  #surpriseButton {
+    padding: 12px 24px;
+    font-size: clamp(14px, 4vw, 28px);
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #ff0000;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s;
+  }
 
-    #surpriseButton:hover {
-      transform: scale(1.1);
-    }
-
-    /* Extra adjustment for very small screens */
-    @media (max-height: 600px) {
-      .message { font-size: 6vw; }
-      #secondMessage { font-size: 5.5vw; }
-      #surpriseButton { font-size: 5vw; padding: 2.5vh 4vw; }
-    }
-  </style>
+  #surpriseButton:hover {
+    transform: scale(1.1);
+  }
+</style>
 </head>
 <body>
 
-  <!-- Initial Message -->
   <div id="message" class="message">
     Happy Engagement Anniversary ❤️ Mubashara! Wishing you endless love and happiness
   </div>
 
-  <!-- Second Message -->
   <div id="secondMessage" class="message">
-    ❤️ Mubashara
-
-💖 Happy Engagement Anniversary 💖
-
-Fazi ❤️ Mubashara
-30 March 2024
-
-My Dearest Love,
-
-From the very moment you entered my life, everything became brighter, warmer, and more beautiful.
-You are not just my fiancé—you are my heart, my joy, my safe place, my forever.
-
-Every single day with you feels like a dream I never want to end.
-On this special day, I want to remind you just how deeply and endlessly I love you.
-
-✨ I promise to never leave your side ✨
-
-No matter what life brings, I will always be here, standing with you, loving you, and cherishing every moment with you.
-
-Happy Engagement Anniversary, my love 💍❤️
-Forever and always yours,
-Fazi 💫
+    Happy Engagement Anniversary Fazi ❤️ Mubashara! Wishing you endless love and happiness
   </div>
 
-  <!-- Open Surprise Button -->
   <button id="surpriseButton">Open Surprise 🎁</button>
 
-  <script>
-    let fireworks;
+<script>
+  let fireworks;
 
-    function startFireworks() {
-      const container = document.body;
-      fireworks = new Fireworks(container, {
-        rocketsPoint: 50,
-        trace: 3,
-        explosion: 5,
-        intensity: 30,
-        gravity: 2.0,
-        flickering: true,
-        boundaries: { x: 0, y: 0, width: container.clientWidth, height: container.clientHeight },
-      });
-      fireworks.start();
-    }
+  function startFireworks() {
+    const container = document.body;
+    fireworks = new Fireworks(container, {
+      rocketsPoint: 50,
+      trace: 3,
+      explosion: 5,
+      intensity: 30,
+      gravity: 2.0,
+      flickering: true,
+      boundaries: { x: 0, y: 0, width: container.clientWidth, height: container.clientHeight },
+    });
+    fireworks.start();
+  }
 
-    function surpriseAction() {
-      const secondMessage = document.getElementById("secondMessage");
-      secondMessage.style.opacity = 1;
-      startFireworks();
-      document.getElementById("surpriseButton").style.display = 'none';
-    }
+  function surpriseAction() {
+    document.getElementById("secondMessage").style.opacity = 1;
+    startFireworks();
+    document.getElementById("surpriseButton").style.display = 'none';
+  }
 
-    document.getElementById("surpriseButton").addEventListener("click", surpriseAction);
-  </script>
+  document.getElementById("surpriseButton").addEventListener("click", surpriseAction);
+</script>
 
 </body>
 </html>
