@@ -1,97 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Fazi ❤️ Mubashara</title>
-<style>
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #ff9a9e, #fad0c4);
-  text-align: center;
-  color: white;
-}
-.container {
-  margin-top: 15%;
-}
-h1 {
-  font-size: 40px;
-}
-p {
-  font-size: 20px;
-  max-width: 600px;
-  margin: auto;
-}
-.heart {
-  font-size: 50px;
-  animation: beat 1s infinite;
-}
-@keyframes beat {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-}
-button {
-  padding: 10px 20px;
-  font-size: 18px;
-  border: none;
-  border-radius: 10px;
-  background: white;
-  color: #ff6f91;
-  cursor: pointer;
-  margin-top: 20px;
-}
-.hidden {
-  display: none;
-}
-</style>
-  <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2/dist/fireworks.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Engagement Anniversary</title>
+  <!-- Fireworks library -->
+  <script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/fireworks.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #ff0000; /* Red background */
+      color: #fff;
+      font-family: sans-serif;
+      overflow: hidden;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2em;
+      z-index: 10;
+      position: relative;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #fff;
+      color: #ff0000;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
-
 <body>
+  <h1>Happy Engagement Anniversary Fazi ❤️ Mubashara!</h1>
+  <div>
+    <button onclick="sendWhatsApp()">Send WhatsApp Wishes</button>
+    <button onclick="surprise()">Open Surprise 🎁</button>
+  </div>
 
-<div class="container">
-  <div class="heart">❤️</div>
-  <h1>Happy Engagement Anniversary</h1>
-  <h2>Fazi ❤️ Mubashara</h2>
-  <p>30 March 2024</p>
+  <script>
+    // WhatsApp button
+    function sendWhatsApp() {
+      const message = "Happy Engagement Anniversary Fazi ❤️ Mubashara! Wishing you endless love and happiness.";
+      const url = "https://wa.me/?text=" + encodeURIComponent(message);
+      window.open(url, '_blank');
+    }
 
-  <button onclick="showMessage()">Click to open your surprise 💌</button>
+    // Surprise button
+    function surprise() {
+      alert("🎉 Surprise! Happy Engagement Anniversary Fazi ❤️ Mubashara! 🎉");
 
-  <p id="message" class="hidden">
-    My Love,<br><br>
-    From the moment you came into my life, everything changed beautifully.<br>
-    You are my peace, my happiness, my forever.<br><br>
-    Every day with you feels like a dream I never want to wake up from.<br><br>
-    ✨ I will never leave you ✨<br><br>
-    No matter what happens, I will always stand by your side.<br><br>
-    Happy Engagement Anniversary 💍❤️<br>
-    Forever yours,<br>
-    Fazi 💫
-  </p>
-</div>
+      // Trigger fireworks again
+      const container = document.body;
+      const fireworks = new Fireworks(container, {
+        rocketsPoint: 50,
+        trace: 3,
+        explosion: 5,
+        intensity: 30,
+        gravity: 2.0,
+        flickering: true,
+        boundaries: { x: 0, y: 0, width: container.clientWidth, height: container.clientHeight },
+      });
+      fireworks.start();
+    }
 
-<script>
-<button onclick="surprise()">Open Surprise 🎁</button>
-
-<script>
-function surprise() {
-  alert("🎉 Surprise! Happy Engagement Anniversary Fazi ❤️ Mubashara! 🎉");
-  
-  // Optional: Trigger fireworks again
-  const container = document.body;
-  const fireworks = new Fireworks(container, {
-    rocketsPoint: 50,
-    trace: 3,
-    explosion: 5,
-    intensity: 30,
-    gravity: 2.0,
-    flickering: true,
-    boundaries: { x: 0, y: 0, width: container.clientWidth, height: container.clientHeight },
-  });
-  fireworks.start();
-}
-</script>
-
+    // Fireworks on page load
+    window.onload = function() {
+      const container = document.body;
+      const fireworks = new Fireworks(container, {
+        rocketsPoint: 50,
+        trace: 3,
+        explosion: 5,
+        intensity: 30,
+        gravity: 2.0,
+        flickering: true,
+        boundaries: { x: 0, y: 0, width: container.clientWidth, height: container.clientHeight },
+      });
+      fireworks.start();
+    };
+  </script>
 </body>
-</html>
+</html>    
