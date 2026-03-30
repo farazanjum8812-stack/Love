@@ -28,6 +28,14 @@
       transition: opacity 0.5s ease;
     }
 
+    #secondMessage {
+      font-size: 1.5em;
+      margin: 20px;
+      max-width: 90%;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
     #surpriseButton {
       padding: 15px 30px;
       font-size: 1.2em;
@@ -53,6 +61,32 @@
     Happy Engagement Anniversary ❤️ Mubashara! Wishing you endless love and happiness
   </div>
 
+  <!-- Second Message (hidden initially) -->
+  <div id="secondMessage">
+    ❤️ Mubashara
+
+💖 Happy Engagement Anniversary 💖
+
+Fazi ❤️ Mubashara
+30 March 2024
+
+My Dearest Love,
+
+From the very moment you entered my life, everything became brighter, warmer, and more beautiful.
+You are not just my fiancé—you are my heart, my joy, my safe place, my forever.
+
+Every single day with you feels like a dream I never want to end.
+On this special day, I want to remind you just how deeply and endlessly I love you.
+
+✨ I promise to never leave your side ✨
+
+No matter what life brings, I will always be here, standing with you, loving you, and cherishing every moment with you.
+
+Happy Engagement Anniversary, my love 💍❤️
+Forever and always yours,
+Fazi 💫
+  </div>
+
   <!-- Open Surprise Button -->
   <button id="surpriseButton">Open Surprise 🎁</button>
 
@@ -74,13 +108,15 @@
     }
 
     function surpriseAction() {
-      // Change message
-      const message = document.getElementById("message");
-      message.textContent = 
-        "Happy Engagement Anniversary Fazi ❤️ Mubashara! Wishing you endless love and happiness";
+      // Show second message
+      const secondMessage = document.getElementById("secondMessage");
+      secondMessage.style.opacity = 1;
 
       // Start fireworks
       startFireworks();
+      
+      // Optional: hide button after click
+      document.getElementById("surpriseButton").style.display = 'none';
     }
 
     // Button click event
